@@ -15,7 +15,7 @@ def ball_movement():
     speed = 10
     if start:
         ball_speed_x = speed * random.choice((1, -1))  # Randomize initial horizontal direction
-        ball_speed_y = speed * random.choice((1,-1))  # Randomize initial vertical direction
+        ball_speed_y = speed * -1  # Randomize initial vertical direction
         start = False
 
     # Ball collision with the player paddle
