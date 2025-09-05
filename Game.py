@@ -60,7 +60,7 @@ def restart():
     Resets the ball and player scores to the initial state.
     """
     global ball_speed_x, ball_speed_y, score
-    ball.center = (screen_width / 2, screen_height / 2)  # Reset ball position to center
+    ball.center = (int(screen_width / 2), int(screen_height / 2))  # Reset ball position to center
     ball_speed_y, ball_speed_x = 0, 0  # Stop ball movement
     score = 0  # Reset player score
 
