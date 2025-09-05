@@ -110,9 +110,9 @@ while True:
             if event.key == pygame.K_LEFT:
                 player_speed -= 8  # Move paddle left
             if event.key == pygame.K_RIGHT:
-                player_speed += 8  # Move paddle right
-            if event.key == pygame.K_SPACE:
-                    start = True  # Start the ball movement
+               player_speed += 8  # Move paddle right
+            if event.key == pygame.K_SPACE and ball_speed_y == 0:
+                     start = True # Start the ball movement
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT:
                 player_speed += 8  # Stop moving left
