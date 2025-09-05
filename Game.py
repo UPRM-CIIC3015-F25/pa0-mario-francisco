@@ -15,7 +15,7 @@ def ball_movement():
     speed = 7
     if start:
         ball_speed_x = speed * random.choice((1, -1))  # Randomize initial horizontal direction
-        ball_speed_y = speed * random.choice((1, -1))  # Randomize initial vertical direction
+        ball_speed_y = speed * random.choice((1,-1))  # Randomize initial vertical direction
         start = False
 
     # Ball collision with the player paddle
@@ -23,7 +23,7 @@ def ball_movement():
         if abs(ball.bottom - player.top) < 10:  # Check if ball hits the top of the paddle
             # Task 2: Fix score to increase by 1
             score += 1  # Increase per hit
-            ball_speed_y *= -1  # Reverse ball's vertical direction
+            ball_speed_y *= -1.01  # Reverse ball's vertical direction
             # Task 6: Add sound effects HERE
         pygame.mixer.init()
         bonk_sound = pygame.mixer.Sound("bonk-sound-effect-36055.wav") # Sound for ball colliding with paddle
