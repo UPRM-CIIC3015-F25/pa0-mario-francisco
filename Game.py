@@ -24,7 +24,7 @@ def ball_movement():
             # Task 2: Fix score to increase by 1
             score += 1  # Increase per hit
             ball_speed_y *= -1  # Reverse ball's vertical direction
-            # TODO Task 6: Add sound effects HERE
+            # Task 6: Add sound effects HERE
         pygame.mixer.init()
         bonk_sound = pygame.mixer.Sound("bonk-sound-effect-36055.wav") # Sound for ball colliding with paddle
         bonk_sound.play()
