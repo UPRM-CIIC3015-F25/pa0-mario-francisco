@@ -76,7 +76,7 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('Pong')  # Set window title
 
 # Colors
-bg_color = pygame.Color('grey12')
+bg_color = pygame.Color('gray12')
 
 # Game Rectangles (ball and player paddle)
 ball = pygame.Rect(screen_width / 2 - 15, screen_height / 2 - 15, 30, 30)  # Ball (centered)
@@ -89,6 +89,7 @@ player = pygame.Rect(screen_width/2 - 45, screen_height - 20, player_width, play
 ball_speed_x = 0
 ball_speed_y = 0
 player_speed = 0
+high_score = 0
 
 # Score Text setup
 score = 0
@@ -107,16 +108,16 @@ while True:
             sys.exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                player_speed -= 6  # Move paddle left
+                player_speed -= 8  # Move paddle left
             if event.key == pygame.K_RIGHT:
-                player_speed += 6  # Move paddle right
+                player_speed += 8  # Move paddle right
             if event.key == pygame.K_SPACE:
-                start = True  # Start the ball movement
+                    start = True  # Start the ball movement
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT:
-                player_speed += 6  # Stop moving left
+                player_speed += 8  # Stop moving left
             if event.key == pygame.K_RIGHT:
-                player_speed -= 6  # Stop moving right
+                player_speed -= 8  # Stop moving right
 
     # Game Logic
     ball_movement()
