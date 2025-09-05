@@ -127,7 +127,7 @@ while True:
     red = pygame.Color('red')
     screen.fill(bg_color)  # Clear screen with background color
     pygame.draw.rect(screen, red_crim, player)  # Draw player paddle
-    # TODO Task 3: Change the Ball Color
+    # Task 3: Change the Ball Color
     pygame.draw.ellipse(screen, red_crim, ball)  # Draw ball
     player_text = basic_font.render(f'{score}', False, white_text)  # Render player score
     screen.blit(player_text, (screen_width/2 - 15, 10))  # Display score on screen
