@@ -25,7 +25,10 @@ def ball_movement():
             score += 1  # Increase per hit
             ball_speed_y *= -1.01  # Reverse ball's vertical direction
             if 3 > ball_speed_x > -3:
+                if 0.1 > ball_speed_x > -0.1:
+                    ball_speed_x *= 10 + 3
                 ball_speed_x *= 3
+
             else:
                 ball_speed_x += (player_speed//4)+ random.choice((-2,2))*1.1# Increase horizontal speed
             # Task 6: Add sound effects HERE
