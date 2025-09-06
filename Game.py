@@ -124,18 +124,23 @@ while True:
     player_movement()
 
     # Visuals
-    white_text = pygame.Color('white')
+    if score < 35:
+        heat_color = pygame.Color(150+score*3,150-score*3,150-score*3)
+        score_num = f'{score}'
+    else:
+        heat_color = pygame.Color(255,45,45)
+        score_num = f'{score}'+'!'*int((score/17.5))
+
+    white_text = heat_color
     red_crim = pygame.Color('crimson')
     red = pygame.Color('red')
     screen.fill(bg_color)  # Clear screen with background color
     pygame.draw.rect(screen, red_crim, player)  # Draw player paddle
     # Task 3: Change the Ball Color
-    pygame.draw.ellipse(screen, red_crim, ball)  # Draw ball
-    player_text = basic_font.render(f'{score}', False, white_text)  # Render player score
+    pygame.draw.ellipse(screen, heat_color, ball)  # Draw ball
+    player_text = basic_font.render(f'{score_num}', False, white_text)  # Render player score
     screen.blit(player_text, (screen_width/2 - 15, 10))  # Display score on screen
 
     # Update display
     pygame.display.flip()
     clock.tick(60)  # Maintain 60 frames per second
-    if (abs(ball.bottom - player.right)) < 30:
-        print (abs(ball.bottom - player.right))
